@@ -282,6 +282,7 @@
     <Compile Include="Models\Crime.cs" />
     <Compile Include="Models\Criminal.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Information.cs" />
     <Compile Include="Models\Prison.cs" />
     <Compile Include="Models\PrisonerRelationship.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

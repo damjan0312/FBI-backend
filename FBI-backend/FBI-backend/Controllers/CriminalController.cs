@@ -47,5 +47,11 @@ namespace FBI_backend.Controllers
             return CriminalService.addPrisonerRelationship(p);
         }
 
+        [System.Web.Http.Route("api/criminal/getInformation")]
+        public Information GetInformation(long id)
+        {
+            return CriminalService.getInfromation(id);
+        }
+
     }
 }
