@@ -37,7 +37,11 @@ namespace FBI_backend.Services
                 ConnectionService.Connect();
             try
             {
-                var newCrime = new Crime { name = name, punishment = punishment };
+                int Id = Convert.ToInt32(getMaxId()) + 1;
+                if (Id == null)
+                    Id = 1;
+
+                var newCrime = new Crime { Id = Id, name = name, punishment = punishment };
                 ConnectionService.client.Cypher
                     .Create("(crime:Crime {newCrime})")
                     .WithParam("newCrime", newCrime)
@@ -72,6 +76,16 @@ namespace FBI_backend.Services
 
 
 
+        }
+
+        private static String getMaxId()
+        {
+            var query = new Neo4jClient.Cypher.CypherQuery("match(rel:COMMITED) where exists(rel.Id) return max(rel.Id)",
+                                                            new Dictionary<string, object>(), CypherResultMode.Set);
+
+            String maxId = ((IRawGraphClient)ConnectionService.client).ExecuteGetCypherResults<String>(query).ToList().FirstOrDefault();
+
+            return maxId;
         }
     }
 }

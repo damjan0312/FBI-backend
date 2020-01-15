@@ -18,8 +18,11 @@ namespace FBI_backend.Controllers
         [System.Web.Http.Route("api/crime")]
         public IEnumerable<Crime> getCrimes()
         {
-            CrimeService.CreateCrime("Murder", "10 - 40 years");
-            CrimeService.deleteCrimes();
+            //CrimeService.CreateCrime("Murder", "10 - 40 years");
+            //CrimeService.CreateCrime("Terorrism", "3 - 20 years");
+            //CrimeService.CreateCrime("Kidnapping", "6 - 25 years");
+            //CrimeService.CreateCrime("Robbery", "2 - 15 years");
+        //    CrimeService.deleteCrimes();
             return CrimeService.GetCrimes();
         }
 

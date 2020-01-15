@@ -11,13 +11,12 @@ namespace FBI_backend.Models
         public string placeOfBirth { get; set; }
         public string occupation { get; set; }
         public string race{get;set;}
-        public string male { get; set; }
         public string dateOfBirth { get; set; }
         public string eyes { get; set; }
         public string sex { get; set; }
         public string hair { get; set; }
         public string nationality { get; set; }
-        public string width { get; set; }
+        public string weight { get; set; }
         public string height { get; set; }
         public string name { get; set; }
         public long Id { get; set; }

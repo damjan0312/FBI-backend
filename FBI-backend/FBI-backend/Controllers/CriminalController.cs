@@ -18,7 +18,7 @@ namespace FBI_backend.Controllers
         }
 
         [System.Web.Http.Route("api/criminal/add")]
-        public bool AddCriminal(Criminal newCriminal)
+        public bool AddCriminal([FromBody]Criminal newCriminal)
         {
             return CriminalService.CreateCriminal(newCriminal);
         }
@@ -26,7 +26,7 @@ namespace FBI_backend.Controllers
         [System.Web.Http.Route("api/criminal/delete")]
         public bool DeleteCriminal(long Id)
         {
-            return CriminalService.DeleteCriminal(1);
+            return CriminalService.DeleteCriminal(Id);
         }
 
         [System.Web.Http.Route("api/criminal/addCommited")]
@@ -45,6 +45,12 @@ namespace FBI_backend.Controllers
         public bool AddPrisonerRelationship(PrisonerRelationship p)
         {
             return CriminalService.addPrisonerRelationship(p);
+        }
+
+        [System.Web.Http.Route("api/criminal/getInformation")]
+        public Information GetInformation(long id)
+        {
+            return CriminalService.getInfromation(id);
         }
 
     }
